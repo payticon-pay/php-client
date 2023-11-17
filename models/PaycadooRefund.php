@@ -22,6 +22,14 @@ class PaycadooRefund {
 	**/
 	public $paymentId;
 	/**
+	* @var integer	
+	**/
+	public $amount;
+	/**
+	* @var string	
+	**/
+	public $orderId;
+	/**
 	* @param array $array
 	* @return self	
 	**/
@@ -33,6 +41,8 @@ class PaycadooRefund {
 		$model->reason = $array["reason"];
 		$model->merchantId = $array["merchantId"];
 		$model->paymentId = $array["paymentId"];
+		$model->amount = $array["amount"];
+		$model->orderId = $array["orderId"];
 		
 		return $model;
 	}

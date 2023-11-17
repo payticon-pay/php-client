@@ -30,6 +30,10 @@ class PaycadooOrder {
 	**/
 	public $price;
 	/**
+	* @var boolean	
+	**/
+	public $canBeRefunded;
+	/**
 	* @var string	
 	**/
 	public $currency;
@@ -59,6 +63,7 @@ class PaycadooOrder {
 		$model->createdAt = $array["createdAt"];
 		$model->updatedAt = $array["updatedAt"];
 		$model->price = $array["price"];
+		$model->canBeRefunded = $array["canBeRefunded"];
 		$model->currency = $array["currency"];
 		$model->customer = PaycadooCustomer::create($array["customer"]);
 		$model->title = $array["title"];
