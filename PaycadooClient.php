@@ -8,6 +8,7 @@ include_once "models/PaycadooSubscriptionItem.php";
 include_once "models/PaycadooSubscription.php";
 include_once "models/PaycadooOrderWithPaywallUrl.php";
 include_once "clients/PaycadooOrderClient.php";
+include_once "clients/PaycadooRefundClient.php";
 include_once "clients/PaycadooSubscriptionClient.php";
 
 class PaycadooClient {
@@ -15,6 +16,10 @@ class PaycadooClient {
 	* @var PaycadooOrderClient	
 	**/
 	public $order;
+	/**
+	* @var PaycadooRefundClient	
+	**/
+	public $refund;
 	/**
 	* @var PaycadooSubscriptionClient	
 	**/
@@ -27,6 +32,7 @@ class PaycadooClient {
 	{
 		$httpClient = new PaycadooHttpClient($url, $apiKey);
 		$this->order = new PaycadooOrderClient($httpClient);
+		$this->refund = new PaycadooRefundClient($httpClient);
 		$this->subscription = new PaycadooSubscriptionClient($httpClient);
 		
 	}
